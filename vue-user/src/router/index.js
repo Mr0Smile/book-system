@@ -23,7 +23,7 @@ const routes = [
 				path: "buy",
 				name: "buy",
 				params: {
-					showText: "文创商城",
+					showText: "商城",
 					role: "USER",
 					icon: "Goods",
 					show: true,
