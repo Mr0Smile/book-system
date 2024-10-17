@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjnu.red_study.mapper.GoodsInMapper">
+    <resultMap id="BaseResultMap" type="zjnu.red_study.entity.GoodsIn">
+        <result column="goods_id" property="goods_id" jdbcType="INTEGER"/>
+        <result column="goods_name" property="goods_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectAll" parameterType="zjnu.red_study.entity.GoodsIn" resultMap="BaseResultMap">
+        select goods_in.* , goods.name as goods_name from goods_in
+        left join goods on goods_in.goods_id = goods.id
+        <where>
+            <if test="goods_name != null"> and goods_name like concat('%', #{goods_name}, '%')</if>
+        </where>
+        order by goods_in.id desc
+    </select>
+
+    <select id="selectById" parameterType="int" resultMap="BaseResultMap">
+        select * from goods_in where id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="zjnu.red_study.entity.GoodsIn" useGeneratedKeys="true">
+        insert into goods_in(id, goods_id, num, channel, date, comment)
+        values (#{id}, #{goods_id}, #{num}, #{channel}, #{date}, #{comment})
+    </insert>
+
+    <update id="updateById" parameterType="zjnu.red_study.entity.GoodsIn">
+        update goods_in set goods_id = #{goods_id}, num = #{num}, channel = #{channel}, date = #{date}, comment = #{comment}
+        where id = #{id}
+    </update>
+
+</mapper>

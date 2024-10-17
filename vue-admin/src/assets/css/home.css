@@ -1,0 +1,58 @@
+.home-card {
+    float: left;
+}
+
+.heading {
+    margin: 3% 0 5% 0;
+    /* 上下边距 */
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+}
+
+.content {
+    font-size: small;
+    text-indent: 2em;
+    /* 第一行缩进2个字符的宽度 */
+}
+
+.timeline {
+    width: 100%;
+    /* Timeline 宽度 */
+    background-color: transparent;
+    /* 设置背景透明 */
+}
+
+.el-timeline {
+    --el-timeline-node-color: black;
+}
+
+.el-card {
+    background-color: transparent;
+    /* 设置 el-card 的背景透明 */
+    border: none;
+    /* 去掉边框 */
+    box-shadow: none;
+    /* 去掉阴影 */
+}
+
+.el-collapse-item {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.el-collapse {
+    --el-collapse-border-color: transparent !important;
+    --el-collapse-header-height: 48px;
+    --el-collapse-header-bg-color: transparent !important;
+    --el-collapse-header-text-color: var(--el-text-color-primary);
+    --el-collapse-header-font-size: 13px;
+    --el-collapse-content-bg-color: transparent !important;
+    --el-collapse-content-font-size: 13px;
+    --el-collapse-content-text-color: var(--el-text-color-primary);
+    border-top: 1px solid var(--el-collapse-border-color);
+    border-bottom: 1px solid var(--el-collapse-border-color);
+}

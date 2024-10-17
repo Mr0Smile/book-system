@@ -1,0 +1,26 @@
+{
+	"configurations": [
+		{
+			"command": "cd vue-user; npm run serve",
+			"name": "Run VUE-USER",
+			"request": "launch",
+			"type": "node-terminal"
+		},
+		{
+			"command": "cd vue-admin; npm run serve",
+			"name": "Run VUE-ADMIN",
+			"request": "launch",
+			"type": "node-terminal"
+		},
+		{
+			"type": "java",
+			"name": "Run Spring Boot",
+			"request": "launch",
+			"cwd": "${workspaceFolder}",
+			"mainClass": "zjnu.red_study.SpringbootApplication",
+			"projectName": "springboot",
+			"args": "",
+			"envFile": "${workspaceFolder}/.env"
+		}
+	]
+}

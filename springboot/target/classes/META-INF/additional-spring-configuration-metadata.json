@@ -1,0 +1,9 @@
+{
+	"properties": [
+		{
+			"name": "fileBaseUrl",
+			"type": "java.lang.String",
+			"description": "用于存储文件的基础URL地址"
+		}
+	]
+}

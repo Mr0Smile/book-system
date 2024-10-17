@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjnu.red_study.mapper.StudyBaseMapper">
+
+    <select id="selectAll" resultType="zjnu.red_study.entity.StudyBase">
+        select study_base.* from study_base
+        <where>
+            <if test="studyBaseName != null"> and study_base.study_base_name like concat('%', #{studyBaseName}, '%')</if>
+        </where>
+        order by study_base.id desc
+    </select>
+
+    <insert id="insert" parameterType="zjnu.red_study.entity.StudyBase" useGeneratedKeys="true">
+        insert into study_base(id, study_base_name,descr,article_id,special_column_id)
+        values (#{id}, #{studyBaseName},#{descr},#{articleId},#{specialColumnId})
+    </insert>
+
+    <update id="updateById" parameterType="zjnu.red_study.entity.StudyBase">
+        update study_base set study_base_name = #{studyBaseName},descr=#{descr},article_id=#{articleId},special_column_id=#{specialColumnId}
+        where id = #{id}
+    </update>
+
+</mapper>
