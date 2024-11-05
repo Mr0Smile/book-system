@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjnu.red_study.mapper.NewsMapper">
+
+    <select id="selectAll" resultType="zjnu.red_study.entity.News">
+        select * from news
+        <where>
+            <if test="title != null"> and title like concat('%', #{title}, '%')</if>
+        </where>
+        order by id desc
+    </select>
+
+
+    <insert id="insert" parameterType="zjnu.red_study.entity.News" useGeneratedKeys="true">
+        insert into news(id, title, content,author, time)
+        values (#{id}, #{title}, #{content},#{author}, #{time})
+    </insert>
+
+    <update id="updateById" parameterType="zjnu.red_study.entity.News">
+        update news set title = #{title}, content = #{content}, author = #{author}, time = #{time}
+        where id = #{id}
+    </update>
+
+</mapper>

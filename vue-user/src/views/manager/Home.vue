@@ -2,18 +2,19 @@
 	<div class="clearfix">
 		<carousel :images="images"></carousel>
 
-		<div class="clearfix" style="clear: both">
-			<div class="home-card" style="width: 60%">
-				<activity></activity><activity></activity>
-			</div>
-
-			<news class="home-card" style="width: 35%; margin: 0 0 0 3%"></news>
+		<div style="clear: both">
+			<activity class="home-card" style="width: 60%"></activity>
+			<news
+				class="home-card"
+				style="width: 30%; margin: 0 0% 0 5%"
+				:news="data.news"
+			></news>
 		</div>
 
-		<div class="clearfix" style="clear: both">
-			<a1 class="home-card" style="width: 55%"></a1>
-
-			<a2 class="home-card" style="width: 42%; margin: 0 0 0 3%"></a2>
+		<div style="clear: both">
+			<div class="home-card" style="margin-left: 3%">
+				<notice :notice="data.notice"></notice>
+			</div>
 		</div>
 	</div>
 </template>
@@ -39,6 +40,15 @@ onMounted(() => {
 		.get("/notice/selectAll")
 		.then((res) => {
 			data.notice = res.data; // 更新数据
+		})
+		.catch((error) => {
+			console.error("获取活动数据失败:", error); // 处理错误
+		});
+
+	request
+		.get("/news/selectAll")
+		.then((res) => {
+			data.news = res.data.slice(-3); // 更新为最后三条数据
 		})
 		.catch((error) => {
 			console.error("获取活动数据失败:", error); // 处理错误

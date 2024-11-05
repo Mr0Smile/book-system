@@ -7,6 +7,7 @@
 			<news
 				class="home-card"
 				style="width: 30%; margin: 0 0% 0 5%"
+				:news="data.news"
 			></news>
 		</div>
 
@@ -38,6 +39,15 @@ onMounted(() => {
 		.get("/notice/selectAll")
 		.then((res) => {
 			data.notice = res.data; // 更新数据
+		})
+		.catch((error) => {
+			console.error("获取活动数据失败:", error); // 处理错误
+		});
+
+	request
+		.get("/news/selectAll")
+		.then((res) => {
+			data.news = res.data.slice(-3); // 更新为最后三条数据
 		})
 		.catch((error) => {
 			console.error("获取活动数据失败:", error); // 处理错误

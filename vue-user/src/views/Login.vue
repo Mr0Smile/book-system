@@ -112,7 +112,7 @@ const login = () => {
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	/* background-color: rgba(234,224,199,0.5); */
 
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.3);
 
 	/* background-image: url('../assets/imgs/login_background_1.png'); */
 }

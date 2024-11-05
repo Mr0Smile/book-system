@@ -59,7 +59,7 @@
 					width: 200px;
 					border-right: 1px solid #ddd;
 					min-height: calc(100vh - 60px);
-					background-color: #f8f8ff;
+					/* background-color: #f8f8ff; */
 				"
 			>
 				<stickyNavbar />
@@ -88,7 +88,7 @@ const updateUser = () => {
 
 <style scoped>
 .main-container {
-	min-height: 150vh;
+	min-height: 100vh;
 	width: 100%;
 	background-image: url("../assets/imgs/background.png");
 	background-size: cover;

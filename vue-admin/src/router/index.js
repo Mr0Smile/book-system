@@ -18,17 +18,12 @@ const routes = [
 				},
 				component: () => import("@/views/manager/Home.vue"),
 			},
-			// 购物页
+			// 新闻管理
 			{
-				path: "buy",
-				name: "buy",
-				params: {
-					showText: "商城",
-					role: "USER",
-					icon: "Goods",
-					show: true,
-				},
-				component: () => import("@/views/manager/Buy.vue"),
+				path: "news",
+				name: "news",
+				params: { showText: "新闻管理", icon: "Bell", show: true },
+				component: () => import("@/views/manager/news.vue"),
 			},
 			// 订单管理
 			{

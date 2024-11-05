@@ -9,7 +9,6 @@ import zjnu.red_study.service.UserService;
 
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 public class WebController {
 
@@ -48,6 +47,19 @@ public class WebController {
         userService.register(user);
         return Result.success();
     }
+
+    // @PostMapping("/register")
+    // public Result register(@RequestBody User user) {
+    // // 创建密码加密器
+    // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    //
+    // // 加密用户密码
+    // String encodedPassword = passwordEncoder.encode(user.getPassword());
+    // user.setPassword(encodedPassword); // 设置加密后的密码
+    //
+    // userService.register(user); // 注册用户
+    // return Result.success();
+    // }
 
     /**
      * 修改密码
